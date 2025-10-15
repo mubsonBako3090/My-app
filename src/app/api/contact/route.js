@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"; 
-import dbConnect from "@/lib/dbConnect";
+import connectDB from "@/config/db"; 
 import Contact from "@/models/Contact"; 
 // CREATE 
 export async function POST(request) { 
