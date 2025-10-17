@@ -1,4 +1,4 @@
-import Tutorials from "@/component/Tutorials"
+import Tutorials from "@/components/Tutorials"
 
 export default function TutorialsPage() {
 
