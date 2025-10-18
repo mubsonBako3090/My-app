@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server"; 
+import db from '@/config/db';
+
 import connectDB from "@/config/db"; 
 import Contact from "@/models/Contact"; 
 // CREATE 
