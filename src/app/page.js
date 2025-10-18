@@ -1,11 +1,11 @@
-import Landing from "@/Components/Landing";
+import Landing from "../components/Landing";
 
 
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
-    
+
         <Landing />
     </>
   );

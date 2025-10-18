@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 
         export default function Project() {
     return (
@@ -99,6 +99,35 @@
                         </div>
                     </div>
                 </div>
+                <div className="card">
+                            <div className="card-body bg-secondary text-center">
+                              <Link
+                                href="https://wa.me/2349164675884"
+                                target="_blank"
+                                className="btn w-80 rounded-3 fw-bold getbtn my-3 bg-light d-flex align-items-center justify-content-center gap-2"
+                              >
+                                <img src="/kkk.webp" alt="WhatsApp" width={64} height={64} />
+                                Chat on WhatsApp for tutorials
+                              </Link>
+                              <p className="text-muted ">
+                                I'm here to help you with any questions you have!
+                              </p>
+                              <div className="d-flex flex-column gap-3">
+                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window"></i>
+                                  <h5 className="mb-0">HTML</h5>
+                                </div>
+                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window"></i>
+                                  <h5 className="mb-0">Photoshop</h5>
+                                </div>
+                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window"></i>
+                                  <h5 className="mb-0">JavaScript</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
             </div>
         </>
     );
