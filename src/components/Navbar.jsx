@@ -14,7 +14,7 @@ export default function Navbar() {
           Bako`s e n t
         </a>
         <button
-          className="navbar-toggler shadow-none"
+          className="navbar-toggler shadow-none bg-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#main-nav"

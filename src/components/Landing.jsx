@@ -17,24 +17,17 @@ export default function Landing() {
             Welcome to my tutorial concept, you`r highly welcome.
             We provide tech solutions by the best of our ability.  
             </h2>
-<h2>
-  
-</h2>
-            <b>What is the purpose of your visit?</b>
-            <div data-aos="fade-up" data-aos-delay="600">
-              <div className="text-center text-lg-start">
+            <h4>What is the purpose of your visit?</h4>
+            <div data-aos="fade-up" data-aos-delay="600" className="d-flex-row gap-4">
+          
+              <div className="text-center  text-lg-start mt-4">
                 <a
-                 
-                  href="#about"
-                  className="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
-                >
-                  <div className="card-body "></div>
-                  <span>Explore/Get Started</span>
+                  href="/Project"
+                  className=" btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+      
+                 > Get Started
           
                   <i className="bi bi-arrow-down" ></i>
-                 
-            
-                  <i className="bi bi-arrow-down"></i>
                 </a>
               </div>
             </div>

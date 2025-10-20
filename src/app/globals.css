@@ -72,6 +72,41 @@ body {
 
   font-size: 26px;
 }
+.hover-text {
+  transition: color 0.2s ease;
+  color: rgb(197, 100, 100);
+}
+
+.hover-text:hover {
+  color: rgb(81, 108, 196);
+  cursor: pointer;
+}
+.hover-text:hover {
+  color: #603aca;
+  text-decoration: underline;
+  transform: scale(1.05);
+}.hover-text {
+  transition: all 0.3s ease;
+}.hover-card .card-title,
+.hover-card .card-text {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover .card-title {
+  color: #ffd700; /* gold */
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+.hover-card:hover .card-text {
+  color: #ffffff;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+
+
+
 /*--------------------------------------------------------------
 # MainPage Section
 --------------------------------------------------------------*/

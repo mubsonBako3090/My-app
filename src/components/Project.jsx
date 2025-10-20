@@ -36,7 +36,7 @@ import Link from "next/link";
                     <div className="card bg-dark text-light">
                         <img src="/ihj.PNG" alt="" className="card-img" />
                         <div className="card-body">
-                            <h4 className="fw-bold my-2">mubson </h4>
+                            <h4 className="fw-bold my-2"> </h4>
                             <p> </p>
                             <div className="d-flex flex-wrap gap-2">
                                 <p className="bg-danger rounded-4 text-light px-3"> MSQL </p>
@@ -54,7 +54,7 @@ import Link from "next/link";
                             <h4 className="fw-bold my-2">
                                 
                                 
-                                mubarakadambako</h4>
+                            </h4>
                             <p>
                                  
 
@@ -73,7 +73,7 @@ import Link from "next/link";
                     <div className="card bg-dark text-light">
                         <img src="/down.jpeg" alt="" className="card-img" />
                         <div className="card-body">
-                            <h4 className="fw-bold my-2">mubson</h4>
+                            <h4 className="fw-bold my-2">Backend using Bootstrap</h4>
                             <p> </p>
                             <div className="d-flex flex-wrap gap-2">
                                 <p className="bg-danger rounded-4 text-light px-3"> photo shop </p>
@@ -88,7 +88,7 @@ import Link from "next/link";
                     <div className="card bg-dark text-light">
                         <img src="/lol.png" alt="" className="card-img" />
                         <div className="card-body">
-                            <h4 className="fw-bold my-2">mubson</h4>
+                            <h4 className="fw-bold my-2">Frontend </h4>
                             <p> </p>
                             <div className="d-flex flex-wrap gap-2">
                                 <p className="bg-primary rounded-4 text-light px-3"> MSQL </p>
@@ -99,16 +99,37 @@ import Link from "next/link";
                         </div>
                     </div>
                 </div>
-                <div className="card">
+                                <div className="col-lg-4">
+                    <div className="card bg-dark text-light mb-4">
+                        <img src="/down.jpeg
+                        
+                        
+                        " alt="" className="card-img" />
+                        <div className="card-body">
+                            <h4 className="fw-bold my-2">mubarakadambako</h4>
+                            <p> </p>
+                            <div className="d-flex flex-wrap gap-2">
+
+                          <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window"></i>
+                                  <h5 className="mb-0">HTML</h5>
+                                </div>
+                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window bi bi-arrowup"></i>
+                                  <h5 className="mb-0">Photoshop</h5>
+                                </div>
+                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window"></i>
+                                  <h5 className="mb-0">JavaScript</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="card bg-dark mb-4">
                             <div className="card-body bg-secondary text-center">
-                              <Link
-                                href="https://wa.me/2349164675884"
-                                target="_blank"
-                                className="btn w-80 rounded-3 fw-bold getbtn my-3 bg-light d-flex align-items-center justify-content-center gap-2"
-                              >
-                                <img src="/kkk.webp" alt="WhatsApp" width={64} height={64} />
-                                Chat on WhatsApp for tutorials
-                              </Link>
+                         
                               <p className="text-muted ">
                                 I'm here to help you with any questions you have!
                               </p>
@@ -118,7 +139,29 @@ import Link from "next/link";
                                   <h5 className="mb-0">HTML</h5>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window bi bi-arrowup"></i>
+                                  <h5 className="mb-0">Photoshop</h5>
+                                </div>
+                                <div className="d-flex align-items-center gap- bg-dark text-white rounded-3 p-2">
                                   <i className="bi bi-window"></i>
+                                  <h5 className="mb-0">JavaScript</h5>
+                                </div>
+                              </div>
+                            </div>
+                            
+                <div className="card bg-light)">
+                            <div className="card-body bg-secondary text-center">
+                             
+                              <p className="text-muted ">
+                                I'm here to help you with any questions you have!
+                              </p>
+                              <div className="d-flex flex-column gap-3">
+                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window"></i>
+                                  <h5 className="mb-0">HTML</h5>
+                                </div>
+                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                                  <i className="bi bi-window bi bi-arrowup"></i>
                                   <h5 className="mb-0">Photoshop</h5>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
@@ -127,6 +170,7 @@ import Link from "next/link";
                                 </div>
                               </div>
                             </div>
+                          </div>
                           </div>
             </div>
         </>

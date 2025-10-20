@@ -8,8 +8,6 @@ export default function Tutorials() {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>Tutorial Page</title>
-          <p1>My Tutorial Page</p1>
-          <p2>Learn web development with me!</p2>
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
@@ -30,10 +28,14 @@ export default function Tutorials() {
               overflow: hidden;
             }
 
-            .card:hover {
-              transform: scale(1.01);
-              transition: transform 0.3s ease;
-            }
+           .card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(36, 248, 255, 0.2);
+}
 
             .card iframe {
               width: 100%;
@@ -54,11 +56,12 @@ export default function Tutorials() {
           `}</style>
         </Head>
 
-        <main className="w-100">
-          <h1 className="text-center my-4">My Tutorial Page</h1>
+        {/* ✅ Centered content with max-width */}
+        <main className="container my-4">
+          <h1 className="text-center mb-4">My Tutorial Page</h1>
 
-          {/* ✅ Full-Width Video Card */}
-          <div className="card">
+          {/* ✅ Video Card */}
+          <div className="card hover-card mb-4 bg-dark">
             <iframe
               src="https://www.youtube.com/embed/dQw4w9WgXcQ"
               title="Tutorial Video"
@@ -78,15 +81,30 @@ export default function Tutorials() {
             </div>
           </div>
 
-          {/* ✅ Full-Width Profile Card */}
-          <div className="card">
-            <img src="/down.jpeg" alt="profile" className="card-img-top img-fluid" />
+          {/* ✅ Profile Card */}
+          <div className="card hover-card mb-4">
+             <iframe
+              src="https://youtube.be/ZxaA6hW-4eYsi=15uWfqznwaebVjr4"
+              title="Tutorial Video"
+              allowFullScreen
+            ></iframe>
+            <div className="card-body bg-secondary text-center">
             <div className="card-body">
-              <h4 className="fw-bold my-2">mubarakadambako</h4>
+              <h4 className="fw-bold my-2 hover-text">lesson 5: cloudsoft </h4>
+              <p className="text-muted">click below for Web Development & Designing</p>
+           <a
+           href="https://youtube.be/ZxaA6hW-4eYsi=15uWfqznwaebVjr4 "
+           target="blank"
+           rel="noopener noreferre"
+           className="btn btn-outline-danger text-light w-100"
+           >
+            watch on YouTube
+           </a>
             </div>
           </div>
+</div>
 
-          {/* ✅ Full-Width Contact & Skills Card */}
+          {/* ✅ Contact & Skills Card */}
           <div className="card">
             <div className="card-body bg-secondary text-center">
               <Link
@@ -97,9 +115,11 @@ export default function Tutorials() {
                 <img src="/kkk.webp" alt="WhatsApp" width={64} height={64} />
                 Chat on WhatsApp for tutorials
               </Link>
-              <p className="text-muted ">
+              <p className="text-muted">
                 I'm here to help you with any questions you have!
               </p>
+
+              {/* Skills Section */}
               <div className="d-flex flex-column gap-3">
                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
                   <i className="bi bi-window"></i>

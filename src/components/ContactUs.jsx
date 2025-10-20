@@ -204,6 +204,7 @@ const ContactUs = () => {
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
+                  <Link href="/intouch" className="btn w-100 btn-outline-warning mt-3">View Contact</Link>
                 </form>
               </div>
             </div>
