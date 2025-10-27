@@ -140,7 +140,7 @@ const ContactUs = () => {
           {/* Left: Image */}
           <div className="col-lg-6 text-center mb-4 mb-md-0">
             <img
-              src="/abdull.jpg" // Ensure this path is correct
+              src="/lom.jpg" // Ensure this path is correct
               alt="Contact illustration"
              ange to actual image height
               className="img-fluid rounded"

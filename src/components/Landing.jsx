@@ -39,7 +39,7 @@ export default function Landing() {
           >
             <h4 className=" d-lg-none img-head">Stainless CEO</h4>
             <img
-              src="/abdull.jpg"
+              src="/lom.jpg"
               className="img-fluid shadow"
               alt="imgd hhfj"
             />

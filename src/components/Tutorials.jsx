@@ -15,7 +15,7 @@ export default function Tutorials() {
           <style>{`
             body {
               font-family: Arial, sans-serif;
-              background-color: #406d99ff;
+              background-color: #437cb6ff;
               margin: 0;
             }
 
@@ -44,7 +44,7 @@ export default function Tutorials() {
             }
 
             .getbtn {
-              background-color: #25D366;
+              background-color: #0e2fe9ff;
               color: white;
               padding: 10px;
               text-align: center;
@@ -118,6 +118,7 @@ export default function Tutorials() {
               <p className="text-muted">
                 I'm here to help you with any questions you have!
               </p>
+              <div> </div>
 
               {/* Skills Section */}
               <div className="d-flex flex-column gap-3">

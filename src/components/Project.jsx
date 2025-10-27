@@ -3,25 +3,22 @@ import Link from "next/link";
         export default function Project() {
     return (
         <>
-            <div className="sectionTitle d-flex flex-row text-light">
+            <div className="sectionTitle d-flex flex-row  text-light justify-content-center align-items-center my-3">
               
-                <h4>Our projects</h4>
+                <h2>PROJECTS</h2>
                
             </div>
-             <div className="sectionTitle d-flex flex-row text-light">
-
-  <h6>feel free to explore our projects below.</h6>
-                    
+             <div className="sectionTitle d-flex flex-row text-light justify-content-center align-items-center my-3">
+             
+              <h4>Feel Free To Explore Our Projects Below .</h4>
+                
                 </div>
-            <div className="row justify-content-center align-items-center text-light">
+            <div className="row justify-content-center align-items-center my-3 text-light">
                 <div className="col-lg-4">
                     <div className="card bg-dark text-light">
-                        <img src="/down.jpeg
-                        
-                        
-                        " alt="" className="card-img" />
+                        <img src="/oop.PNG" alt="" className="card-img" />
                         <div className="card-body">
-                            <h4 className="fw-bold my-2">mubarakadambako</h4>
+                            <h4 className="fw-bold my-2"></h4>
                             <p> </p>
                             <div className="d-flex flex-wrap gap-2">
                                 <p className="bg-danger rounded-4 text-light px-3"> booling </p>
@@ -32,9 +29,10 @@ import Link from "next/link";
                         </div>
                     </div>
                 </div>
+                
                 <div className="col-lg-4">
                     <div className="card bg-dark text-light">
-                        <img src="/ihj.PNG" alt="" className="card-img" />
+                        <img src="/oop.PNG" alt="" className="card-img" />
                         <div className="card-body">
                             <h4 className="fw-bold my-2"> </h4>
                             <p> </p>
@@ -49,7 +47,7 @@ import Link from "next/link";
                 </div>
                 <div className="col-lg-4">
                     <div className="card bg-dark text-light">
-                        <img src="/hh.avif" alt="" className="card-img" />
+                        <img src="/oop.PNG" alt="" className="card-img" />
                         <div className="card-body">
                             <h4 className="fw-bold my-2">
                                 
@@ -71,9 +69,9 @@ import Link from "next/link";
                 </div>
                 <div className="col-lg-4">
                     <div className="card bg-dark text-light">
-                        <img src="/down.jpeg" alt="" className="card-img" />
+                        <img src="/oop.PNG" alt="" className="card-img" />
                         <div className="card-body">
-                            <h4 className="fw-bold my-2">Backend using Bootstrap</h4>
+                            <h4 className="fw-bold my-2"></h4>
                             <p> </p>
                             <div className="d-flex flex-wrap gap-2">
                                 <p className="bg-danger rounded-4 text-light px-3"> photo shop </p>
@@ -86,9 +84,9 @@ import Link from "next/link";
                 </div>
                 <div className="col-lg-4">
                     <div className="card bg-dark text-light">
-                        <img src="/lol.png" alt="" className="card-img" />
+                        <img src="/oop.PNG" alt="" className="card-img" />
                         <div className="card-body">
-                            <h4 className="fw-bold my-2">Frontend </h4>
+                            <h4 className="fw-bold my-2"> </h4>
                             <p> </p>
                             <div className="d-flex flex-wrap gap-2">
                                 <p className="bg-primary rounded-4 text-light px-3"> MSQL </p>
@@ -99,27 +97,28 @@ import Link from "next/link";
                         </div>
                     </div>
                 </div>
-                                <div className="col-lg-4">
-                    <div className="card bg-dark text-light mb-4">
-                        <img src="/down.jpeg
+                
+                <div className="col-lg-4 mb-4">
+                    <div className="card bg-dark mb-4 text-light ">
+                        <img src="/oop.PNG
                         
                         
                         " alt="" className="card-img" />
                         <div className="card-body">
-                            <h4 className="fw-bold my-2">mubarakadambako</h4>
+                            <h4 className="fw-bold "> </h4>
                             <p> </p>
-                            <div className="d-flex flex-wrap gap-2">
+                            <div className="d-flex flex-wrap gap-2 ">
 
-                          <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
-                                  <i className="bi bi-window"></i>
+                          <div className="d-flex align-items-center gap-2 bg-dark text-white my-4 rounded-3 p-2">
+                                  
                                   <h5 className="mb-0">HTML</h5>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
-                                  <i className="bi bi-window bi bi-arrowup"></i>
+                                  
                                   <h5 className="mb-0">Photoshop</h5>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
-                                  <i className="bi bi-window"></i>
+                                
                                   <h5 className="mb-0">JavaScript</h5>
                                 </div>
 
@@ -127,11 +126,12 @@ import Link from "next/link";
                         </div>
                     </div>
                 </div>
+                <div className="">
                 <div className="card bg-dark mb-4">
-                            <div className="card-body bg-secondary text-center">
+                            <div className="card-body bg-secondary text-center my-4">
                          
-                              <p className="text-muted ">
-                                I'm here to help you with any questions you have!
+                              <p className="text-light ">
+                                I'm here to help you with any questions you have regarding web development!
                               </p>
                               <div className="d-flex flex-column gap-3">
                                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
@@ -142,27 +142,29 @@ import Link from "next/link";
                                   <i className="bi bi-window bi bi-arrowup"></i>
                                   <h5 className="mb-0">Photoshop</h5>
                                 </div>
-                                <div className="d-flex align-items-center gap- bg-dark text-white rounded-3 p-2">
-                                  <i className="bi bi-window"></i>
+                                <div className="d-flex align-items-center gap- bg-dark mb-4 text-white rounded-3 p-2">
+                                
                                   <h5 className="mb-0">JavaScript</h5>
                                 </div>
                               </div>
                             </div>
-                            
-                <div className="card bg-light)">
-                            <div className="card-body bg-secondary text-center">
+                            </div>
+                          </div>
+                          <div className="">
+                <div className="card bg-dark mb-4"> 
+                            <div className="card-body bg-secondary text-center my-4">
                              
                               <p className="text-muted ">
-                                I'm here to help you with any questions you have!
+                                I'm here to help you with any questions you have on web development!
                               </p>
-                              <div className="d-flex flex-column gap-3">
-                                <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
+                              <div className="d-flex flex-column gap-3 my-4">
+                                <div className="d-flex align-items-center gap-2 bg-dark  text-white rounded-3 p-2">
                                   <i className="bi bi-window"></i>
-                                  <h5 className="mb-0">HTML</h5>
+                                  <h5 className="mb-0">CSS</h5>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
                                   <i className="bi bi-window bi bi-arrowup"></i>
-                                  <h5 className="mb-0">Photoshop</h5>
+                                  <h5 className="mb-0">JAVA</h5>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 bg-dark text-white rounded-3 p-2">
                                   <i className="bi bi-window"></i>
@@ -172,7 +174,8 @@ import Link from "next/link";
                             </div>
                           </div>
                           </div>
-            </div>
+                          </div>
+            
         </>
     );
 }
