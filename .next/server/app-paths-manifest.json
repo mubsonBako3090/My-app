@@ -1,10 +1,5 @@
 {
-  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/api/contact/route": "app/api/contact/route.js",
-  "/tutorials/page": "app/tutorials/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/about/page": "app/about/page.js",
-  "/home/page": "app/home/page.js"
+  "/todolist/page": "app/todolist/page.js",
+  "/api/task/route": "app/api/task/route.js"
 }

@@ -22,12 +22,23 @@ export default function Landing() {
           
               <div className="text-center  text-lg-start mt-4">
                 <a
-                  href="/Project"
+                  href="/project"
                   className=" btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
-      
-                 > Get Started
+                > 
+                   Get Started 
+                  <i className="bi bi-arrow-down"></i>
+                </a>
+              </div>
+            </div>
+             <div data-aos="fade-up" data-aos-delay="600" className="d-flex-row gap-4">
           
-                  <i className="bi bi-arrow-down" ></i>
+              <div className="text-center  text-lg-start mt-4">
+                <a
+                  href="/contact"
+                  className=" btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                > 
+                   in Toch 
+                  <i className="bi bi-arrow-down"></i>
                 </a>
               </div>
             </div>

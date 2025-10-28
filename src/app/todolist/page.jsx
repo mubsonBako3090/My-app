@@ -1,4 +1,4 @@
-import TodoList from "@/components/TodoList";
+import TodoList from "@/components/Todo-List";
 
 
 export default function TodoListPage() {
