@@ -1,0 +1,164 @@
+import { Link, useLocation } from "wouter";
+import { useAuth } from "@/hooks/use-auth";
+import { useUserRole } from "@/hooks/use-roles";
+import { cn } from "@/lib/utils";
+import { 
+  LayoutDashboard, 
+  Users, 
+  Stethoscope, 
+  Calendar, 
+  FileText, 
+  Settings, 
+  LogOut,
+  Activity,
+  Menu
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useState } from "react";
+
+export function Sidebar() {
+  const [location] = useLocation();
+  const { user, logout } = useAuth();
+  const { data: userRole } = useUserRole(user?.id);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const role = userRole?.role || "patient";
+
+  const menuItems = [
+    {
+      title: "Dashboard",
+      icon: LayoutDashboard,
+      href: "/dashboard",
+      roles: ["admin", "doctor", "receptionist", "patient"],
+    },
+    {
+      title: "Doctors",
+      icon: Stethoscope,
+      href: "/doctors",
+      roles: ["admin", "receptionist"],
+    },
+    {
+      title: "Patients",
+      icon: Users,
+      href: "/patients",
+      roles: ["admin", "receptionist", "doctor"],
+    },
+    {
+      title: "Appointments",
+      icon: Calendar,
+      href: "/appointments",
+      roles: ["admin", "doctor", "receptionist", "patient"],
+    },
+    {
+      title: "Billing",
+      icon: FileText,
+      href: "/billing",
+      roles: ["admin", "receptionist", "patient"],
+    },
+  ];
+
+  const filteredItems = menuItems.filter((item) => item.roles.includes(role));
+
+  const SidebarContent = () => (
+    <div className="flex flex-col h-full bg-card border-r border-border/50">
+      <div className="p-6 border-b border-border/50">
+        <div className="flex items-center gap-3">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Activity className="h-6 w-6 text-primary" />
+          </div>
+          <div>
+            <h1 className="font-display font-bold text-xl tracking-tight text-foreground">MediCare</h1>
+            <p className="text-xs text-muted-foreground font-medium">Management System</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-1 py-6 px-4 space-y-1 overflow-y-auto">
+        {filteredItems.map((item) => {
+          const isActive = location === item.href;
+          return (
+            <Link key={item.href} href={item.href}>
+              <div
+                className={cn(
+                  "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer group",
+                  isActive
+                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+                onClick={() => setMobileOpen(false)}
+              >
+                <item.icon className={cn("h-5 w-5", isActive ? "text-primary-foreground" : "text-muted-foreground group-hover:text-primary")} />
+                <span className="font-medium">{item.title}</span>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="p-4 border-t border-border/50 bg-muted/30">
+        <div className="flex items-center gap-3 mb-4 px-2">
+          {user?.profileImageUrl && (
+            <img 
+              src={user.profileImageUrl} 
+              alt={user.firstName || "User"} 
+              className="w-10 h-10 rounded-full border border-border"
+            />
+          )}
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold truncate text-foreground">
+              {user?.firstName} {user?.lastName}
+            </p>
+            <p className="text-xs text-muted-foreground truncate capitalize bg-primary/10 text-primary px-2 py-0.5 rounded-full inline-block mt-1">
+              {role}
+            </p>
+          </div>
+        </div>
+        <Button
+          variant="outline"
+          className="w-full justify-start gap-2 hover:bg-destructive/10 hover:text-destructive hover:border-destructive/20 transition-colors"
+          onClick={() => logout()}
+        >
+          <LogOut className="h-4 w-4" />
+          Sign Out
+        </Button>
+      </div>
+    </div>
+  );
+
+  return (
+    <>
+      {/* Desktop Sidebar */}
+      <div className="hidden lg:block w-72 fixed inset-y-0 left-0 z-50">
+        <SidebarContent />
+      </div>
+
+      {/* Mobile Sidebar */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetTrigger asChild>
+            <Button variant="outline" size="icon" className="shadow-md">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="p-0 w-72">
+            <SidebarContent />
+          </SheetContent>
+        </Sheet>
+      </div>
+    </>
+  );
+}
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen bg-background font-sans">
+      <Sidebar />
+      <main className="lg:ml-72 min-h-screen p-4 md:p-8 transition-all duration-300">
+        <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          {children}
+        </div>
+      </main>
+    </div>
+  );
+}

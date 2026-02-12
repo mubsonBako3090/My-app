@@ -1,0 +1,65 @@
+import { Layout } from "@/components/layout/Sidebar";
+import { useBills } from "@/hooks/use-bills";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { format } from "date-fns";
+import { DollarSign, FileText } from "lucide-react";
+
+export default function Billing() {
+  const { data: bills, isLoading } = useBills();
+
+  return (
+    <Layout>
+      <div className="mb-8">
+        <h1 className="text-3xl font-display font-bold">Billing & Invoices</h1>
+        <p className="text-muted-foreground">Manage payments and financial records</p>
+      </div>
+
+      <div className="grid gap-4">
+        {bills?.map((bill) => (
+          <Card key={bill.id} className="border-border/50 hover:shadow-md transition-all">
+            <CardContent className="p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="bg-emerald-100 text-emerald-600 p-3 rounded-xl">
+                  <DollarSign className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                     <h3 className="font-bold text-lg">Invoice #{bill.id}</h3>
+                     <Badge variant={bill.status === 'paid' ? 'default' : 'destructive'} className={bill.status === 'paid' ? 'bg-emerald-500' : ''}>
+                       {bill.status}
+                     </Badge>
+                  </div>
+                  <p className="text-muted-foreground text-sm mt-1">
+                    Due: {format(new Date(bill.dueDate), 'PPP')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <div className="text-right">
+                  <span className="text-2xl font-bold font-display">${(bill.amount / 100).toFixed(2)}</span>
+                </div>
+                {bill.status !== 'paid' && (
+                  <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+                    Pay Now
+                  </button>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+        
+        {(!bills || bills.length === 0) && !isLoading && (
+            <div className="text-center py-12 bg-muted/20 rounded-xl border border-dashed border-border">
+                <div className="bg-muted p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <FileText className="w-8 h-8 text-muted-foreground" />
+                </div>
+                <h3 className="text-lg font-medium">No invoices found</h3>
+                <p className="text-muted-foreground">All payments are up to date</p>
+            </div>
+        )}
+      </div>
+    </Layout>
+  );
+}

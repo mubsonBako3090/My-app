@@ -1,0 +1,54 @@
+import { Layout } from "@/components/layout/Sidebar";
+import { useDoctors } from "@/hooks/use-doctors";
+import { Card, CardContent } from "@/components/ui/card";
+import { Stethoscope, Mail, Clock } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+export default function Doctors() {
+  const { data: doctors, isLoading } = useDoctors();
+
+  if (isLoading) return <Layout><div>Loading...</div></Layout>;
+
+  return (
+    <Layout>
+      <div className="mb-8">
+        <h1 className="text-3xl font-display font-bold">Medical Staff</h1>
+        <p className="text-muted-foreground">Meet our qualified specialists</p>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {doctors?.map((doc) => (
+          <Card key={doc.userId} className="overflow-hidden border-border/50 hover:shadow-lg transition-all duration-300 group">
+            <div className="h-24 bg-gradient-to-r from-blue-500 to-primary/80 group-hover:h-32 transition-all duration-500 ease-in-out relative">
+              <div className="absolute -bottom-10 left-6">
+                <Avatar className="w-20 h-20 border-4 border-background shadow-xl">
+                  <AvatarImage src={doc.user.profileImageUrl || undefined} />
+                  <AvatarFallback className="text-lg bg-primary/10 text-primary">
+                    {doc.user.firstName?.[0]}{doc.user.lastName?.[0]}
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+            </div>
+            <CardContent className="pt-12 pb-6 px-6">
+              <h3 className="text-xl font-bold font-display">Dr. {doc.user.firstName} {doc.user.lastName}</h3>
+              <p className="text-primary font-medium mb-4">{doc.specialization}</p>
+              
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  {doc.user.email}
+                </div>
+                {doc.schedule && (
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    {doc.schedule.startTime} - {doc.schedule.endTime}
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </Layout>
+  );
+}

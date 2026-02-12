@@ -1,0 +1,85 @@
+import { Layout } from "@/components/layout/Sidebar";
+import { usePatients, useCreatePatient } from "@/hooks/use-patients";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertPatientSchema } from "@shared/schema";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Plus } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+
+// Simplified schema for the example
+const createPatientSchema = insertPatientSchema.extend({
+    // In a real app, you'd probably select an existing user to promote to patient
+    // For this demo, assuming we're just adding profile details
+});
+
+export default function Patients() {
+  const { data: patients, isLoading } = usePatients();
+  const [open, setOpen] = useState(false);
+
+  // In a real implementation, you would need a way to link a User ID. 
+  // For now, this is a view-only table for demonstration of the UI.
+
+  return (
+    <Layout>
+      <div className="flex justify-between items-center mb-8">
+        <div>
+          <h1 className="text-3xl font-display font-bold">Patient Records</h1>
+          <p className="text-muted-foreground">View and manage patient information</p>
+        </div>
+        <Button className="shadow-lg shadow-primary/20">
+          <Plus className="w-4 h-4 mr-2" />
+          Add Patient
+        </Button>
+      </div>
+
+      <Card className="border-border/50 shadow-md">
+        <CardHeader>
+          <CardTitle>All Patients</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead>Contact</TableHead>
+                <TableHead>Gender</TableHead>
+                <TableHead>History</TableHead>
+                <TableHead>Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {patients?.map((p) => (
+                <TableRow key={p.userId}>
+                  <TableCell className="font-medium">
+                    {p.user.firstName} {p.user.lastName}
+                  </TableCell>
+                  <TableCell>{p.contactNumber}</TableCell>
+                  <TableCell className="capitalize">{p.gender}</TableCell>
+                  <TableCell className="max-w-xs truncate">{p.medicalHistory}</TableCell>
+                  <TableCell>
+                    <Button variant="ghost" size="sm">View Details</Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+              {(!patients || patients.length === 0) && !isLoading && (
+                <TableRow>
+                  <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
+                    No patients found
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+    </Layout>
+  );
+}
