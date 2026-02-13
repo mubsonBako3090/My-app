@@ -56,8 +56,8 @@ export default function Navbar() {
             </li>
               <ul className="navbar-nav"></ul>
             <li className="nav-item">
-              <a href="/home" className="nav-link fw-bold">
-                Home
+              <a href="/login" className="nav-link fw-bold">
+                login 
               </a>
             </li>
           </ul>
